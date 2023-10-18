@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import React, { Component } from "react";
-
+import "./NewShop.css";
 export default class NewShop extends Component {
   constructor(props) {
     super(props);
