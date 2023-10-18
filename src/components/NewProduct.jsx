@@ -44,6 +44,12 @@ export default class NewProduct extends Component {
     });
   };
 
+  onFileChange = (e) => {
+    this.setState({
+      file: e.target.files[0],
+    });
+  };
+
   onSubmit = (e) => {
     e.preventDefault();
     console.log('form submitted');
@@ -52,12 +58,14 @@ export default class NewProduct extends Component {
     console.log(`category:${this.state.category}`);
     console.log(`quantity:${this.state.quantity}`);
     console.log(`price:${this.state.price}`);
+    console.log(`file:${this.state.file.name}`);
     this.setState({
       name: '',
       description: '',
       category: '',
       quantity: '',
       price: '',
+      file: null,
     });
   };
 
@@ -65,8 +73,16 @@ export default class NewProduct extends Component {
     return (
       <Form onSubmit={this.onSubmit}>
         <h1>New Product</h1>
-        <label htmlFor="formFile" className="form-label"></label>
-        <input className="form-control" type="file" id="formFile" />
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="formFile" className="form-label">
+            Upload File
+          </Form.Label>
+          <Form.Control
+            type="file"
+            id="formFile"
+            onChange={this.onFileChange}
+          />
+        </Form.Group>
         <Form.Group className="mb-3">
           <Form.Control
             type="text"
