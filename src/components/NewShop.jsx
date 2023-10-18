@@ -41,6 +41,8 @@ export default class NewShop extends Component {
     return (
       <Form onSubmit={this.onSubmit}>
         <h1>New Shop</h1>
+        <label htmlFor="formFile" className="form-label"></label>
+        <input className="form-control" type="file" id="formFile" />
         <Form.Group className="mb-3">
           <Form.Control type="text" placeholder="Name" onChange={this.onChangeName} value={this.state.name} />
           <Form.Control type="text" placeholder="Description" onChange={this.onChangeDescription} value={this.state.description} />

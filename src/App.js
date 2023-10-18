@@ -10,6 +10,7 @@ import NewProduct from './components/NewProduct';
 
 function App() {
   return (
+  
     <Router>
       <div className="App">
         <NavBar />
