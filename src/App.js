@@ -11,16 +11,13 @@ import NewProduct from './components/NewProduct';
 function App() {
   return (
     <Router>
-    <h1> Hello World </h1>
-
-
-    <Routes>
-      <Route path='navbar' Component={NavBar}></Route>
-      <Route path="newshop" Component={NewShop}/>
-      <Route path="newproduct" Component={NewProduct}/>
-    </Routes>
-   
-
+      <div className="App">
+        <NavBar />
+        <Routes>
+          <Route path="/newshop" element={<NewShop />} />
+          <Route path="/newproduct" element={<NewProduct />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
